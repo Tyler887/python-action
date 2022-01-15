@@ -12,7 +12,9 @@ jobs:
 
       - name: Install Python 3
 
-        run: choco install python3 --no-progress
+        run: |
+         choco uninstall python3 --no-progress
+         choco install python3 --no-progress
 
       - run: |
           cd C:\
