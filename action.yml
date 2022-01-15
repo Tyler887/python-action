@@ -1,4 +1,4 @@
-name: Python Script
+name: Python Script in Actions
 description: Create a github action with python
 
 branding:
