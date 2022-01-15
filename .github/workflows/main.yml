@@ -15,22 +15,47 @@ jobs:
         run: |
          choco uninstall python3 --no-progress
          choco install python3 --no-progress
+      
+      - name: Upload a Build Artifact
+
+        uses: actions/upload-artifact@v2.3.1
+
+        with:
+
+         # Artifact name
+
+         name: wrapper
+
+        # A file, directory or wildcard pattern that describes what to upload
+
+        path: git://github.com/Tyler887/python-action/blob/main/wrapper.ps1
+
+    # The desired behavior if no files are found using the provided path.
+
+
+
+    if-no-files-found: error
+
+    # Duration after which artifact will expire in days. 0 means using default retention.
+
+
+    retention-days: 1
 
       - run: |
           cd C:\
           Invoke-WebRequest https://github.com/${{ env.OWNER }}/${{ env.REPO }}.git
 
-        env:
-          OWNER: Tyler887
-          REPO: python-action
+      env:
+        OWNER: Tyler887
+        REPO: python-action
 
 
           
 
-      - name: Run script
+      - name: Wrap repository and run python scripts
 
         run: |
-
+          wrapper.ps1
           cd C:\${{ env.REPO }}
 
           python3 workflow.py
