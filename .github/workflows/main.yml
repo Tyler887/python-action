@@ -34,20 +34,17 @@ jobs:
 
 
 
-    if-no-files-found: error
+        if-no-files-found: error
 
     # Duration after which artifact will expire in days. 0 means using default retention.
 
 
     retention-days: 1
 
-      - run: |
-          cd C:\
-          Invoke-WebRequest https://github.com/${{ env.OWNER }}/${{ env.REPO }}.git
 
-      env:
-        OWNER: Tyler887
-        REPO: python-action
+  env:
+    OWNER: Tyler887
+    REPO: python-action
 
 
           
