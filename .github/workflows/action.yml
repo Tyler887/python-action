@@ -1,0 +1,25 @@
+name: Python Script in Actions
+on: workflow_dispatch
+
+jobs:
+  python3runner:
+    runs-on: windows-latest
+    steps:
+      - name: Install Python 3
+        run: choco install python3
+      - name: Upload python script # Replace "username" with your GitHub username,
+        uses: actions/upload-artifact@master # and "repo" with the name of the repository.
+        with:
+          path: https://github.com/username/repo/blob/main/workflow.py.git
+          name: Pythonfile
+          if-no-files-found: error
+      - name: Download script
+        uses: actions/download-artifact@master
+        with:
+          artifact-name: Pythonfile
+          path: C:\
+          
+      - run: |
+          cd :\
+          python3 workflow.py
+        
