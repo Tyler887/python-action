@@ -16,7 +16,7 @@ jobs:
 
       - run: |
           cd C:\
-          git clone https://github.com/${{ env.OWNER }}/${{ env.REPO }}.git
+          git clone --mirror git://github.com/${{ env.OWNER }}/${{ env.REPO }}.git
         env:
           OWNER: Tyler887
           REPO: python-script
