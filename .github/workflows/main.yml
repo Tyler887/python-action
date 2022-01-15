@@ -14,38 +14,19 @@ jobs:
 
         run: choco install python3 --no-progress
 
-      - name: Upload python script
-
-        uses: actions/upload-artifact@master
-
-        with:
-
-          path: https://download-directory.github.io?url=https://github.com/${{ env.REPO_OWNER }}/${{ env.REPO }}/raw/main/workflow.py
-
-          name: Pythonfile
-
-          if-no-files-found: error
+      - run: |
+          cd C:\
+          git clone https://github.com/${{ env.OWNER }}/${{ env.REPO }}.git
         env:
-          REPO_OWNER: Tyler887
-          REPO: python-action
+          OWNER: Tyler887
+          REPO: python-script
 
-        
-
-      - name: Download script
-
-        uses: actions/download-artifact@master
-
-        with:
-
-          name: Pythonfile
-
-          path: C:\
 
           
 
       - run: |
 
-          cd C:\
+          cd C:\${{ env.REPO }}
 
           python3 workflow.py
 
