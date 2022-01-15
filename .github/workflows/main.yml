@@ -22,7 +22,7 @@ jobs:
 
         env:
           OWNER: Tyler887
-          REPO: python-script
+          REPO: python-action
 
 
           
