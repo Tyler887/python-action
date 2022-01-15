@@ -15,6 +15,6 @@ jobs:
                                    # and "repo" with the name of the repository.
         run: |
           cd C:\
-          Invoke-WebRequest https://github.com/username/repo/workflow.py/download    
+          Invoke-WebRequest https://github.com/Tyler887/repo/blob/main/workflow.py/download    
       - run: python3 workflow.py
         
