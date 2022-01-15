@@ -2,7 +2,7 @@ name: Python Script in Actions
 description: Create a github action with python
 
 branding:
-  icon: 'python'
+  icon: 'code'
   color: 'blue'
 
 jobs:
