@@ -1,0 +1,20 @@
+name: Python Script
+description: Create a github action with python
+
+branding:
+  icon: 'python'
+  color: 'blue'
+
+jobs:
+  python3runner:
+    runs-on: windows-latest
+    steps:
+      - name: Install Python 3
+        run: choco install python3
+      - name: Invoke a web request # Replace "username" with your GitHub username,
+                                   # and "repo" with the name of the repository.
+        run: |
+          cd C:\
+          Invoke-WebRequest https://github.com/username/repo/workflow.py/download    
+      - run: python3 workflow.py
+        
