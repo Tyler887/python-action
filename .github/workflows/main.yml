@@ -24,7 +24,9 @@ jobs:
 
           
 
-      - run: |
+      - name: Run script
+
+        run: |
 
           cd C:\${{ env.REPO }}
 
