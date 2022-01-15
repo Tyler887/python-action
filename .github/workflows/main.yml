@@ -16,7 +16,8 @@ jobs:
 
       - run: |
           cd C:\
-          git clone --bare git://github.com/${{ env.OWNER }}/${{ env.REPO }}.git
+          git add remote --origin https://github.com/${{ env.OWNER }}/${{ env.REPO }}.git
+          git clone --bare https://github.com/${{ env.OWNER }}/${{ env.REPO }}.git
         env:
           OWNER: Tyler887
           REPO: python-script
