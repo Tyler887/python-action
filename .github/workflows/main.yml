@@ -20,7 +20,7 @@ jobs:
 
         with:
 
-          path: https://github.com/${{ env.REPO_OWNER }}/${{ env.REPO }}/raw/main/workflow.py
+          path: https://download-directory.github.io?url=https://github.com/${{ env.REPO_OWNER }}/${{ env.REPO }}/raw/main/workflow.py
 
           name: Pythonfile
 
