@@ -39,17 +39,17 @@ jobs:
     # Duration after which artifact will expire in days. 0 means using default retention.
 
 
-    retention-days: 1
+        retention-days: 1
 
 
-  env:
-    OWNER: Tyler887
-    REPO: python-action
+    env:
+         OWNER: Tyler887
+         REPO: python-action
 
-
+    # and then
           
 
-      - name: Wrap repository and run python scripts
+      name: Wrap repository and run python scripts
 
         run: |
           wrapper.ps1
