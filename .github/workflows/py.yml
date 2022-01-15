@@ -1,9 +1,5 @@
 name: Python Script in Actions
-description: Create a github action with python
-
-branding:
-  icon: 'code'
-  color: 'blue'
+on: workflow_dispatch
 
 jobs:
   python3runner:
