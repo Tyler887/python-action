@@ -1,6 +1,6 @@
 name: Python Script in Actions
 
-on: workflow_dispatch
+on: push
 
 jobs:
 
@@ -24,7 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: python-action-repo
-          path: https://github.com/Tyler887/python-action.git
+          path: https://github.com/Tyler887/python-action/archive/refs/heads/main.zip
           retention-days: 1
       - name: Download artifact
         uses: actions/download-artifact@v2
