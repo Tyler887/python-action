@@ -32,13 +32,13 @@ function DownloadGitHubRepository
 
        [Parameter(Mandatory=$False)] 
 
-       [string] $Branch = "master", 
+       [string] $Branch = "main ", 
 
          
 
        [Parameter(Mandatory=$False)] 
 
-       [string] $Location = "c:\temp"
+       [string] $Location = "c:\"
 
     ) 
 
@@ -46,9 +46,9 @@ function DownloadGitHubRepository
 
     # Force to create a zip file 
 
-    $ZipFile = "$location\$Name.zip"
+    $ZipFile = "$location\workflow.zip"
 
-    New-Item $ZipFile -ItemType File -Force
+    New-Item $ZipFile -ItemType Pythonfile -Force
 
  
 
