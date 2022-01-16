@@ -15,28 +15,7 @@ jobs:
         run: |
          choco uninstall python3 --no-progress
          choco install python3 --no-progress
-      - run: |
-         cd C:\
-         git clone https://github.com/Tyler887/python-action target
-         mkdir source\files
-         copy source\files target
-         cd target
-      - uses: actions/upload-artifact@v2
-        with:
-          name: python-action-repo
-          path: https://github.com/Tyler887/python-action/archive/refs/heads/main.zip
-          retention-days: 1
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: python-action-repo
-          path: C:\parsed
 
-
-      - name: Wrap repository
-        run: |
-          cd C:\parsed
-          wrapper.ps1
 
       - name: Run Python action
         run: |  
