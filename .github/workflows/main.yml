@@ -28,7 +28,7 @@ jobs:
         # and then
       - name: Wrap repository
         run: |
-         cd target
+         cd target/source/files
          wrapper.ps1
         env:
          OWNER: Tyler887
