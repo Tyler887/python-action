@@ -13,6 +13,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: Tyler887/python-action@main
+        env:
+          OWNER: # Owner of the repository defined in REPO
+          REPO: # Name of the repo (without "OWNER/")
+          
 ```
 ### `workflow.py`
 ```python
