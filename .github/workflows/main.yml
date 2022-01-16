@@ -21,7 +21,7 @@ jobs:
 
         # and then
       - name: Wrap repository
-        run: /home/runner/work/Tyler887/python-runner/wrapper.ps1
+        run: /home/runner/work/Tyler887/python-action/wrapper.ps1
         env:
          OWNER: Tyler887
          REPO: python-action
