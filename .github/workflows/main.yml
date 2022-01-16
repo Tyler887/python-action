@@ -30,13 +30,14 @@ jobs:
         run: |
          cd target/source/files
          wrapper.ps1
-        env:
-         OWNER: Tyler887
-         REPO: python-action
-      - run: |  
-          cd D:\home\runner\work\${{ env.REPO }}\${{ env.REPO }}
 
-          python3 workflow.py
+      - name: Run Python 3 and run scripts
+        run: |  
+           cd D:\home\runner\work\${{ env.REPO }}\${{ env.REPO }}
+
+           python3 workflow.py
+        env:
+         REPO: python-action
 
 
 
