@@ -17,6 +17,7 @@ jobs:
          choco install python3 --no-progress
       - run: |
          git clone https://github.com/Tyler887/python-action target
+         mkdir source\files
          copy source\files target
          cd target
          git add .
@@ -31,7 +32,7 @@ jobs:
          OWNER: Tyler887
          REPO: python-action
       - run: |  
-          cd C:\${{ env.REPO }}\.git
+          cd D:\home\runner\work\${{ env.REPO }}\${{ env.REPO }}
 
           python3 workflow.py
 
