@@ -16,7 +16,7 @@ jobs:
          choco uninstall python3 --no-progress
          choco install python3 --no-progress
       - run: |
-         git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/Tyler887/python-action target
+         git clone https://.:tyler887@github.com/python-action target
          rm everything but the .git directory
          copy source\files target
          cd target
