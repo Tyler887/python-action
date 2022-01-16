@@ -15,13 +15,19 @@ jobs:
         run: |
          choco uninstall python3 --no-progress
          choco install python3 --no-progress
-      
+      - run: |
+         git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/Tyler887/python-action target
+         rm everything but the .git directory
+         copy source\files target
+         cd target
+         git add .
+         git diff-index --quiet HEAD || git commit -m "add wrapper"
 
 
 
         # and then
       - name: Wrap repository
-        run: /home/runner/work/Tyler887/python-action/wrapper.ps1
+        run: wrapper.ps1
         env:
          OWNER: Tyler887
          REPO: python-action
