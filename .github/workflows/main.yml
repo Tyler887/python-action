@@ -16,8 +16,7 @@ jobs:
          choco uninstall python3 --no-progress
          choco install python3 --no-progress
       - run: |
-         git clone https://.:tyler887@github.com/python-action target
-         rm everything but the .git directory
+         git clone https://github.com/Tyler887/python-action target
          copy source\files target
          cd target
          git add .
@@ -32,9 +31,10 @@ jobs:
          OWNER: Tyler887
          REPO: python-action
       - run: |  
-          cd C:\${{ env.REPO }}
+          cd C:\${{ env.REPO }}\.git
 
           python3 workflow.py
+
 
 
         
