@@ -20,19 +20,19 @@ function DownloadGitHubRepository
 
        [Parameter(Mandatory=$True)] 
 
-       [string] $Name, ${{ env.OWNER }}
+       [string] $Name, ${{ env.REPO }}
 
          
 
        [Parameter(Mandatory=$True)] 
 
-       [string] $Author, ${{ env.REPO }} 
+       [string] $Author, ${{ env.OWNER }} 
 
          
 
        [Parameter(Mandatory=$False)] 
 
-       [string] $Branch = "main ", 
+       [string] $Branch = "main", 
 
          
 
