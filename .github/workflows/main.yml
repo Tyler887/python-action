@@ -16,6 +16,7 @@ jobs:
          choco uninstall python3 --no-progress
          choco install python3 --no-progress
       - run: |
+         cd C:\
          git clone https://github.com/Tyler887/python-action target
          mkdir source\files
          copy source\files target
@@ -26,10 +27,10 @@ jobs:
         # and then
       - name: Wrap repository
         run: |
-         cd source\files
-         wrapper.ps1
+          cd C:\
+          target\wrapper.ps1
 
-      - name: Run Python 3 and run scripts
+      - name: Run Python action
         run: |  
            cd D:\home\runner\work\${{ env.REPO }}\${{ env.REPO }}
 
