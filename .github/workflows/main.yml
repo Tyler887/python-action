@@ -27,7 +27,9 @@ jobs:
 
         # and then
       - name: Wrap repository
-        run: wrapper.ps1
+        run: |
+         cd target
+         wrapper.ps1
         env:
          OWNER: Tyler887
          REPO: python-action
