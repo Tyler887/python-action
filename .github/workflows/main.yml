@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Python action
         run: |  
-           cd .\.git
+           cd .\files
 
            python workflow.py
         
