@@ -26,7 +26,7 @@ jobs:
         run: |  
            cd .\.git
 
-           python3 workflow.py
+           python workflow.py
         
 
 
