@@ -1,5 +1,6 @@
 # python-action
 Write GitHub Actions workflows using Python by running python scripts. The tool uses Microsoft Windows Server.
+> Only supports Python 3. **Python 2 is deprecated.**
 ## Usage
 To use the workflow, there must be a `workflow.py` in the branch where you are trying to publish your action to Marketplace at. I reccommemd that your action runs on `Windows-latest` to ensure you are always running the latest version of Windows Server.
 ## Example
