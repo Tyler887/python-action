@@ -16,15 +16,18 @@ jobs:
          choco uninstall python3 --no-progress
          choco install python3 --no-progress
       - uses: actions/checkout@v2
+        with:
+          repository: ${{ env.OWNER }}/${{ env.REPO }}
+        env:
+          REPO: python-action
+          OWNER: Tyler887
 
       - name: Run Python action
         run: |  
-           cd D:\home\runner\work\${{ env.REPO }}\${{ env.REPO }}
+           cd .\.git
 
            python3 workflow.py
-        env:
-         REPO: python-action
-
+        
 
 
         
