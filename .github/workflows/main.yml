@@ -15,7 +15,7 @@ jobs:
         run: |
          choco uninstall python3 --no-progress
          choco install python3 --no-progress
-
+      - uses: actions/checkout@v2
 
       - name: Run Python action
         run: |  
