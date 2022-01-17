@@ -1,3 +1,3 @@
-print("Hel o   orld!")
-print("Warning! Text glitch found. Exiting")
-exit(8)
+hw = "Hello World!"
+print("hw")
+exit(0)
