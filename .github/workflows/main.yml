@@ -18,16 +18,18 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: ${{ env.OWNER }}/${{ env.REPO }}
+          
         env:
           REPO: python-action
           OWNER: Tyler887
 
       - name: Run Python action
         run: |  
-           cd .\
+           cd D:\a\${{ env.REPO }}/${{ env.REPO }}
 
            python workflow.py
-        
+        env:
+          REPO: python-action
 
 
         
