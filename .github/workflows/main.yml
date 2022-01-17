@@ -28,6 +28,7 @@ jobs:
            cd D:\a\${{ env.REPO }}/${{ env.REPO }}
 
            python workflow.py
+           Exit $LASTEXITCODE
         env:
           REPO: python-action
 
