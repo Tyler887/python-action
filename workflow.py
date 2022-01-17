@@ -1,3 +1,3 @@
 hw = "Hello World!"
-print("hw")
+print(hw)
 exit(0)
