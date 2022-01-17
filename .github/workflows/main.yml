@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Python action
         run: |  
-           cd .\files
+           cd .\
 
            python workflow.py
         
