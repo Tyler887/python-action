@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: Tyler887/python-action@main
         with:
-          path: .\# Rest of the path to the folder
+          path: .\ # Rest of the path to the folder
         env:
           OWNER: # Owner of the repository defined in REPO
           REPO: # Name of the repo (without "OWNER/")
