@@ -1,5 +1,8 @@
 name: Python Script in Actions
-
+description: "Create an action in Python"
+branding:
+  icon: 'terminal'
+  color: 'blue'
 on: push
 
 jobs:
@@ -20,6 +23,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: ${{ env.OWNER }}/${{ env.REPO }}
+          path: ${{ github.events.input.path }}
       - name: Run Python action
         run: |  
            cd D:\a\${{ env.REPO }}/${{ env.REPO }}
