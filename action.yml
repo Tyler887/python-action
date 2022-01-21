@@ -1,26 +1,31 @@
 name: Python Script in Actions
-on: workflow_dispatch
+
+on: push
 
 jobs:
-  python3runner:
+  makewarn:
     runs-on: windows-latest
     steps:
-      - name: Install Python 3
-        run: choco install python3 --no-progress
-      - name: Upload python script # Replace "username" with your GitHub username,
-        uses: actions/upload-artifact@master # and "repo" with the name of the repository.
-        with:
-          path: https://github.com/$REPO_OWNER/$REPO/blob/main/workflow.py.git
-          name: Pythonfile
-          if-no-files-found: error
-        
-      - name: Download script
-        uses: actions/download-artifact@master
-        with:
-          artifact-name: Pythonfile
-          path: C:\
+      - name: Fail
+        run: if (${{ runner.os }} -ne Windows { echo "::error::Python action only supported on Windows. Please change your runner to windows-2022, windows-2019, or even better windows-latest." }
+  python3runner:
+    runs-on: windows-latest
+
+    steps:
+
           
-      - run: |
-          cd C:\
-          python3 workflow.py
+      - name: Install Python 3
+        run: >
+         choco install python3 --no-progress
+      - uses: actions/checkout@v2
+        with:
+          repository: ${{ env.OWNER }}/${{ env.REPO }}
+      - name: Run Python action
+        run: |  
+           cd D:\a\${{ env.REPO }}/${{ env.REPO }}
+           python workflow.py
+           Exit $LASTEXITCODE
+
+
+
         
